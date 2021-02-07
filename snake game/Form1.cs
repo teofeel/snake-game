@@ -12,19 +12,19 @@ namespace snake_game
 {
     public partial class Form1 : Form
     {
-        int cols = 50, rows = 25; // for cols and rows we multiply by 20 to get the table dimension
+        int cols = 50, rows = 25; 
         int score = 0;
-        int px = 0, py = 0; //which direction snake will go
+        int px = 0, py = 0; // smer kretanja zmije
         int frnt = 0, bck = 0; 
-        Body[] snake = new Body[1250]; //body of snake
-        List<int> available = new List<int>(); //available positions on the board
+        Body[] snake = new Body[1250]; 
+        List<int> available = new List<int>(); 
 
-        bool[,] isvisited; //positions of our snake(head and body)
+        bool[,] isvisited; 
 
         Random rnd = new Random();
         Timer timer = new Timer();
 
-        void initialize() //make snake and generate food
+        void initialize()
         {
             isvisited = new bool[rows, cols];
             Body head = new Body((rnd.Next() % cols)*20, (rnd.Next() % rows)*20);
@@ -43,11 +43,11 @@ namespace snake_game
             isvisited[head.Location.Y / 20, head.Location.X / 20] = true;
             available.Remove(head.Location.Y/20 * cols + head.Location.X/20);
 
-            Controls.Add(head); //we control head using arrows
+            Controls.Add(head); 
             snake[frnt] = head;
         }
 
-        void launchtimer() //how fast snake will move, after every interval snake moves 
+        void launchtimer() 
         {
             timer.Interval = 50; 
             timer.Tick += move;
@@ -122,7 +122,7 @@ namespace snake_game
             lblFood.Top = (available[id] * 20) / Width * 20 ;
         }
 
-        bool hits(int x, int y) //hits itself
+        bool hits(int x, int y) 
         {
             if (isvisited[x,y])
             {
@@ -133,7 +133,7 @@ namespace snake_game
             return false;
         }
 
-        bool FoodEaten(int x, int y) //if snake has eaten the food
+        bool FoodEaten(int x, int y) 
         {
             return x == lblFood.Location.X && y == lblFood.Location.Y;
         }
@@ -148,7 +148,7 @@ namespace snake_game
 
         }
 
-        bool Game_Over(int x, int y) //check if snake left the table
+        bool Game_Over(int x, int y) 
         {
             return x < 0 || y < 0 || x > 980 || y > 480;
         }
@@ -172,7 +172,7 @@ namespace snake_game
                 case Keys.Down:
                     py = 20;
                     break;
-                case Keys.Enter: //this doesn't reset the game
+                case Keys.Enter: //ne radi
                     ready();
                     break;
             }

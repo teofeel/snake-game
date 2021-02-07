@@ -30,7 +30,6 @@
         {
             this.lbl1 = new System.Windows.Forms.Label();
             this.lblFood = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl1
@@ -54,22 +53,11 @@
             this.lblFood.Text = "F";
             this.lblFood.Click += new System.EventHandler(this.lblFood_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(574, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(428, 21);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "All rights reserved github.com/teofeel";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 500);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFood);
             this.Controls.Add(this.lbl1);
             this.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,7 +77,6 @@
 
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label lblFood;
-        private System.Windows.Forms.Label label1;
     }
 }
 
